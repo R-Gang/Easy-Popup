@@ -13,7 +13,7 @@ import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import androidx.appcompat.widget.AppCompatTextView
 import com.gang.kotlin.popup.*
-import com.gang.library.ui.activity.BaseActivity
+import com.gang.library.base.BaseActivity
 import com.gang.tools.kotlin.dimension.dip2px
 import com.gang.tools.kotlin.dimension.screenWidth
 import com.gang.tools.kotlin.utils.gone
@@ -81,12 +81,12 @@ class EasyPopActivity : BaseActivity() {
         initComplexPop()
         mEverywherePopup = EverywherePopup.create(this)
             .setContentView(R.layout.layout_everywhere_pop)
-            ?.setAnimationStyle(R.style.LeftTopPopAnim)
+            ?.setAnimationStyle(com.gang.kotlin.popup.R.style.LeftTopPopAnim)
             ?.apply()
         mEverywhereTv?.setOnTouchListener { v, event ->
-            if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                mLastX = event.getRawX()
-                mLastY = event.getRawY()
+            if (event.action == MotionEvent.ACTION_DOWN) {
+                mLastX = event.rawX
+                mLastY = event.rawY
                 Log.i(this@EasyPopActivity.toString(), "onTouch x=$mLastX,y=$mLastY")
             }
             false
@@ -134,7 +134,7 @@ class EasyPopActivity : BaseActivity() {
     private var releaseBinding: PopupReleaseDownBinding? = null
     private val mReleasePop by lazy {
         EasyPopup.create().setContentView(releaseBinding?.root)
-            ?.setAnimationStyle(R.style.RightTopPopAnim)
+            ?.setAnimationStyle(com.gang.kotlin.popup.R.style.RightTopPopAnim)
             ?.setOnViewListener(object : EasyPopup.OnViewListener {
                 override fun initViews(view: View?, popup: EasyPopup?) {
                     releaseBinding?.apply {
@@ -166,7 +166,7 @@ class EasyPopActivity : BaseActivity() {
     private val mWeiboPop by lazy {
         EasyPopup.create()
             .setContentView(this, R.layout.layout_center_pop)
-            ?.setAnimationStyle(R.style.TopPopAnim)
+            ?.setAnimationStyle(com.gang.kotlin.popup.R.style.TopPopAnim)
             ?.setOnViewListener(object : EasyPopup.OnViewListener {
                 override fun initViews(view: View?, popup: EasyPopup?) {
                     val arrowView = view?.findViewById<View>(R.id.v_arrow_weibo)
@@ -185,7 +185,7 @@ class EasyPopActivity : BaseActivity() {
     private fun initCirclePop() {
         mCirclePop = EasyPopup.create()
             .setContentView(this, R.layout.layout_circle_comment)
-            ?.setAnimationStyle(R.style.RightPopAnim)
+            ?.setAnimationStyle(com.gang.kotlin.popup.R.style.RightPopAnim)
             ?.setFocusAndOutsideEnable(true)
             ?.setOnViewListener(object : EasyPopup.OnViewListener {
                 override fun initViews(view: View?, popup: EasyPopup?) {

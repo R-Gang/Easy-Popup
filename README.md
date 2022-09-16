@@ -1,6 +1,20 @@
 # Easy-Popup
 
+引入方式：
+
 [![](https://jitpack.io/v/R-Gang/Easy-Popup.svg)](https://jitpack.io/#R-Gang/Easy-Popup)
+
+    allprojects {
+        repositories {
+            ...
+            maven { url 'https://jitpack.io' }
+        }
+    }
+
+    dependencies {
+         implementation 'com.github.R-Gang:Easy-Popup:latest.integration'
+    }
+
 
 PopupWindow
 

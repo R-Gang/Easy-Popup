@@ -52,9 +52,9 @@ object Dependencies {
 
     const val androidx_multidex = "androidx.multidex:multidex:2.0.1" // Dex处理
 
-    const val toolsUtils = "com.github.R-Gang:Tools-Utils:v1.0.1-beta" // 实用工具类
+    const val toolsUtils = "com.github.R-Gang:Tools-Utils:v1.0.1-beta.1" // 实用工具类
     const val RecyclerCommon = "com.github.R-Gang:Recycler-Common:1.0.0" // 视图列表扩展
-    const val AndroidCommon = "com.github.R-Gang:Android-Common:v0.1.6-beta.10@aar" // 常用类(以上为基类关联依赖)
+    const val AndroidCommon = "com.github.R-Gang:Android-Common:v0.1.6-beta.13.0" // 常用类(以上为基类关联依赖)
 
     const val recyclerview = "androidx.recyclerview:recyclerview:1.2.1@aar" // recyclerview
 
@@ -67,7 +67,13 @@ object Dependencies {
         it.maven { url = URI("https://maven.aliyun.com/repository/central") }
         it.maven { url = URI("https://maven.aliyun.com/repository/google") }
         it.maven { url = URI("https://maven.aliyun.com/repository/jcenter") }
-        it.maven { url = URI("https://jitpack.io") }
+        it.maven {
+            url = URI("https://jitpack.io")
+            this.credentials {
+                val authToken = "jp_v2f4a2fpc64k39f7gd3ek4m6k7"
+                username = authToken
+            }
+        }
         it.maven { url = URI("https://dl.google.com/dl/android/maven2/") }
         it.maven { url = URI("https://maven.youzanyun.com/repository/maven-releases") }
         it.maven { url = URI("https://maven.google.com") }

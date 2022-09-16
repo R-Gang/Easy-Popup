@@ -31,7 +31,7 @@ class CmmtPopup(context: Context?) : BasePopup<CmmtPopup?>() {
             dip2px(150f).toInt())
         setFocusAndOutsideEnable(true)
             ?.setBackgroundDimEnable(true)
-            ?.setAnimationStyle(R.style.BottomPopAnim)
+            ?.setAnimationStyle(com.gang.kotlin.popup.R.style.BottomPopAnim)
             ?.setDimValue(0.5f)
             ?.setInputMethodMode(PopupWindow.INPUT_METHOD_NEEDED)
             ?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
